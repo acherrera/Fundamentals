@@ -1,0 +1,3 @@
+Put notes - assembly notes and configuration files here. 
+Could have configuration files in 'config' folder, but this is 
+an acceptable place for them also

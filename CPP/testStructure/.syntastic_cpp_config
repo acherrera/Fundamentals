@@ -1,0 +1,3 @@
+" This allows the include folder to be included in the Syntastic checker
+-I include
+
