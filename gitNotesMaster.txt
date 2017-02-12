@@ -1,3 +1,5 @@
+This is a basic overview of how to use git
+
 git remote add origin http://IP/path/to/repository #will add the directory as 'origin' for later
 
 
@@ -18,7 +20,7 @@ git branch -d xx #will delete the branch
 # In case you delete local files on accident and need them
 git reset -- hard origin/master
 
-MORE NOTES: Make changes to the master - see if I care. Especially
-            if the changes are not going to be large or effect 
-            the overall project
-
+More notes: if making changes to master (e.g. if it's your own projec
+and you don't care to much about mistakes) you can just checkout and 
+use master. when pushing, do 'push -u origin master' and will not need
+to do a bunch of checkout or pull or branch. 
