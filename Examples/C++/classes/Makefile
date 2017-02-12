@@ -1,4 +1,9 @@
+# Excrutiatingly simple Makefile. Good starting point before looking
+# and digging around in the filestructure make file.
 
+# Each section defines how to the specified part. Will run down through
+# linked sections when call. I.E. the RUNME will runn through the 
+# other main.o, Mother.o, Daughter.o to make the .exe
 RUNME: main.o Daughter.o Mother.o
 	g++ main.o Mother.o Daughter.o -o RUNME
 
