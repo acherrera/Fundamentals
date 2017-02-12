@@ -1,0 +1,83 @@
+" Updated 2017/02/12 
+" This is the configuration file for by vim setup. See the 'Plugin' 
+" install section below for the plugins that are currently installed
+
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'tmhedberg/SimpylFold'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+filetype plugin indent on
+
+" This is all my personal settings! ##############################
+set number
+let python_highlight_all=1
+syntax on
+set background=dark
+
+"This wil allo the tab complete file finder to work###########  
+set path+=**
+set wildmenu
+
+" This is for tab completion#################################
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=79
+set expandtab
+set autoindent
+set fileformat=unix
+
+" shit for YCM#############################################
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_autoclose_preview_window_after_completion=2
+
+" shit for powerline########################################
+set rtp+=/usr/share/powerline/bindings/vim/
+
+" Always show statuslie
+set laststatus=2
+ " Use 256 colours (Use this setting only if your terminal supports 256  colours)
+ set t_Co=256
+
+" Code folding
+set foldmethod=indent 
+set foldnestmax=3
+
+" YCM info crap for C++ configuration
+ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+
+" Syntastic settings - allows the checker to check inthe /include directory
+let g:syntastic_cpp_config_file=".syntastic_cpp_config"
