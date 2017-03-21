@@ -1,3 +1,0 @@
-Use for smaller test classes for files. Basically a little place 
-to hide off-shoots of the main program that doesn't clog up the 
-build or src folders and can be found and removed easily

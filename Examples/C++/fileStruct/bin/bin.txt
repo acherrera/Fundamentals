@@ -1,2 +1,0 @@
-This is where the ouput executables for application, tests and spikes
-

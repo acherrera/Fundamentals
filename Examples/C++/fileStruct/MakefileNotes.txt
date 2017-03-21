@@ -1,3 +1,0 @@
-
-No idea what a Makefile does. I am guessing it builds the code so 
-I do not have to do it every time by hand. 

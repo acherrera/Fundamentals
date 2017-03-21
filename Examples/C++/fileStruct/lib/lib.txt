@@ -1,2 +1,0 @@
-libraries that get compiled by the projct go here. Keep them in 
-their default location until needed here for the build...? 

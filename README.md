@@ -1,6 +1,7 @@
 # UsefulFiles
 
-Includes lot of example files and file structure that I have found and created throughout learning different programming languages
+Has information that I like to keep handy while programming in Python and
+working through the terminal
 
 ## TODO
  - add Python classes and examples
