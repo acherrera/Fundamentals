@@ -1,9 +1,3 @@
-" Updated 2017/02/12 
-" This is the configuration file for by vim setup. See the 'Plugin' 
-" install section below for the plugins that are currently installed
-
-
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -21,6 +15,8 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
 " Plugin 'tmhedberg/SimpylFold'
 
 
@@ -41,17 +37,22 @@ filetype plugin indent on    " required
 
 filetype plugin indent on
 
-" This is all my personal settings! ##############################
+
+" ========================== Personal Settings ===================
+
+" This is all my personal settings ===============================
 set number
 let python_highlight_all=1
 syntax on
 set background=dark
+set incsearch
+set hlsearch
 
-"This wil allo the tab complete file finder to work###########  
+"This wil allow the tab complete file finder to work ============
 set path+=**
 set wildmenu
 
-" This is for tab completion#################################
+" This is for tab completion =====================================
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -60,14 +61,14 @@ set expandtab
 set autoindent
 set fileformat=unix
 
-" shit for YCM#############################################
+" shit for YCM =================================================
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=2
 
-" shit for powerline########################################
+" shit for powerline ===========================================
 set rtp+=/usr/share/powerline/bindings/vim/
 
-" Always show statuslie
+" Always show statuslie =========================================
 set laststatus=2
  " Use 256 colours (Use this setting only if your terminal supports 256  colours)
  set t_Co=256
@@ -81,3 +82,4 @@ set foldnestmax=3
 
 " Syntastic settings - allows the checker to check inthe /include directory
 let g:syntastic_cpp_config_file=".syntastic_cpp_config"
+

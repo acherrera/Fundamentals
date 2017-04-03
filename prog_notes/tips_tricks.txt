@@ -1,0 +1,56 @@
+# Here I'm going to try and put in some helpful tips and tricks for various
+things that I do.
+
+
+Time Lapse creation
+
+    ffmpeg -r 30 -start_number 0329 -i FILE%04d.JPG -s 1280x720 -vcodec libx264 new_file.mp4 
+
+        -r 30               frame rate
+        -start_number       file number to start at (assumes sequential)
+        -i                  input format. Here FILE0000-FILE9999
+        -s                  size of output
+        -vcodec             I would assume codec type. libx264 is ?? 
+        new_file.mp4        Output file name
+
+
+
+
+Tar commands
+
+    Compressing a directory
+        tar -czvf archive_name.tar.gz path/to/directory/name
+            -c  create archive
+            -z  compress with gzip
+            -v  verbose: show the output
+            -f  file name is specified
+
+
+    Extracting a directory
+        tar -xvf path/to/directory
+            -x  extract directory
+            -v  verbose: show the output
+            -f  specify the name
+            
+
+Vim notes
+    Running Python
+        ctrl-z                  - will pause currenty session
+        $python3 whatever.py    - runs program whatever.py
+        $fg                     - bring VIM back to foreground
+
+    
+    Find and replace %s is substitute command
+        :%s/foo/bar/gc          - replace 'foo' with 'bar' and confirm 'c'
+
+    Range searches
+        :s/foo/bar/gc           - replace on current line
+        :%s/foo/bar/gc          - replace on all lines
+        :5,12s/foo/bar/g        - replace from 5 to 12. Note not prompt here
+        :.,+2s/foo/bar/g        - current line (.) and next two lines
+        
+    Split pane
+        :sp filename            - will open file
+        ctrl-w[hjkl]            - move to pane. Use keys hjkl
+                                - good candidate for remapping
+        ctrl -ww                - next window
