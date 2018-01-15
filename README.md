@@ -5,7 +5,6 @@ working through the terminal
 
 ## TODO
  - add Python classes and examples
- - why use pointer access instea of normal on newboston c++ #55
- - add Java tutorials.... Yes. Adding Java tutorials
- - add C++ struct maybe
+ - Concentrate on Python and Linux
+ - Start with a new vimrc to flush old knowledge
 
