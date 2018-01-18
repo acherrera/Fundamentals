@@ -40,6 +40,10 @@ filetype plugin indent on
 
 " ========================== Personal Settings ===================
 
+
+:imap jk <Esc>
+
+
 " This is all my personal settings ===============================
 set number
 let python_highlight_all=1
