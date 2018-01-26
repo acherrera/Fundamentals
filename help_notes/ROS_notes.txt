@@ -1,0 +1,47 @@
+
+
+
+#### General Notes ####
+
+ROS master
+    - roscore is what tell the nodes where to get their data
+    - roslaunch will also start the roscore
+    - Note that the master is run on a network of some kind. This allows
+      the program to work across a network if needed
+
+
+nodes are litte programs
+    - each node 'subscribes' or 'publishes' data
+    - roscore keeps track of who wants what
+
+
+
+
+#### Command Notes ####
+rosnode - contains commands for examining ros nodes
+    - rosnode info /EXAMPLE       
+        - will show information for the EXAMPLE node
+
+    - rosnode list                  
+        - display list of nodes
+
+rostopic - contains commands for examine topics within nodes. Use the
+           rosnode command to find topics to examine
+    - rostopic list
+        - shows all the topics being published
+
+    - rostopic info /EXAMPLE/TOPIC 
+        - Will show more information on topic "TOPIC". Information 
+          like type of data  
+
+    - rostopic echo /some_topic
+        - will show the data coming out of some topic
+
+    - rostopic pub /some_topic msg/MessageType "data:value"
+        - will put in data into a topic. 
+
+    
+
+
+          
+                                       
