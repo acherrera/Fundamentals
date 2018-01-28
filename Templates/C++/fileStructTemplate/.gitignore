@@ -1,0 +1,13 @@
+
+# This is the just the default .gitignore settings these can 
+# be changed as needed, but provide good starting place
+
+# Ignore the build and lib dirs
+build
+lib/*
+
+# Igonore any exectuables
+bin/*
+
+# Ignore Mac specific files
+.DS_Store

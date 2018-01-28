@@ -1,0 +1,3 @@
+Project header files go here and anything that is not under 
+/usr/local/include
+
