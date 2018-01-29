@@ -23,3 +23,4 @@ o                           # Switch
 C-o                         # Rotate panes
 !                           # break pane into window
 q                           # display pane number 
+*arrow keys*                # move that direction

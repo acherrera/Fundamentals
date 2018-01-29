@@ -1,5 +1,39 @@
+I will attempt to follow along with the ROS programming book to create
+something useful. Wish me luck!
 
 
+# Making a work space
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace
+
+cd ~/catkin_ws          # go up one level
+catkin_make             # make stuff! See below 
+ 
+        """
+        Make stuff created build and devel. /build is for c++ which we
+        mainly don't need anyways
+        """
+
+source devel/setup.bash - soures the setup file
+
+
+# Making a package
+cd ~/catkin_ws/src                          # to source
+catkin_create_pkg my_awesome_code rospy     # see below
+
+        """
+        here rospy is a dependancy and must be listed as such
+        this is where you should list all dependencies
+        Also, should edit the 'package.xml' file
+        """
+
+# Rosrun
+    # Use rosrun so you don't have to track down the packages all the time
+rosrun PACKAGE EXECUTABLE [ARGS]        # start roscore first
+
+roscore
+rosrun rospy_tutorials talker   # This will run no matter where you are
 
 #### General Notes ####
 
@@ -40,8 +74,4 @@ rostopic - contains commands for examine topics within nodes. Use the
     - rostopic pub /some_topic msg/MessageType "data:value"
         - will put in data into a topic. 
 
-    
-
-
-          
-                                       
+                   
