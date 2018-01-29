@@ -1,52 +1,83 @@
 I will attempt to follow along with the ROS programming book to create
-something useful. Wish me luck!
+something useful. Notes are taken in a psuedo-python code
 
 
 # Making a work space
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-catkin_init_workspace
+    mkdir -p ~/catkin_ws/src
+    cd ~/catkin_ws/src
+    catkin_init_workspace
 
-cd ~/catkin_ws          # go up one level
-catkin_make             # make stuff! See below 
- 
-        """
-        Make stuff created build and devel. /build is for c++ which we
-        mainly don't need anyways
-        """
+    cd ~/catkin_ws          # go up one level
+    catkin_make             # make stuff! See below 
+     
+    """
+    Make stuff created build and devel. /build is for c++ which we
+    mainly don't need anyways
+    """
 
-source devel/setup.bash - soures the setup file
+    source devel/setup.bash # soures the setup file
 
 
 # Making a package
-cd ~/catkin_ws/src                          # to source
-catkin_create_pkg my_awesome_code rospy     # see below
+    cd ~/catkin_ws/src                          # to source
+    catkin_create_pkg my_awesome_code rospy     # see below
 
-        """
-        here rospy is a dependancy and must be listed as such
-        this is where you should list all dependencies
-        Also, should edit the 'package.xml' file
-        """
+    """
+    here rospy is a dependancy and must be listed as such
+    this is where you should list all dependencies
+    Also, should edit the 'package.xml' file
+    """
 
-# Rosrun
+
+# Running a nodes
     # Use rosrun so you don't have to track down the packages all the time
-rosrun PACKAGE EXECUTABLE [ARGS]        # start roscore first
+    rosrun PACKAGE EXECUTABLE [ARGS]        # start roscore first
 
-roscore
-rosrun rospy_tutorials talker   # This will run no matter where you are
+    roscore
+    rosrun rospy_tutorials talker   # This will run no matter where you are
+
+
+# Remapping Names
+    """
+    When calling a program, you can change the name of the topic to avoid
+    naming conflicts. See book for more
+    """
+
+
+# Running a bunch of nodes
+    roslaunch PACKAGE LAUNCH_FILE # general format
+        # roslaunch files are .xml that describe the nodes to run
+    """ Format for the launch file
+        <launch>
+          <node name="listener" pkg="rospy_tutorials" type="listener.py" output="screen"/>
+          <node name="talker" pkg="rospy_tutorials" type="talker.py" output="screen"/>
+        </launch>
+
+        node    # ros graph name
+        pkg     # where the package is located
+        type    # type of node (just the filename to use)
+        output  # where to put the output. "screen" is useful for bedugging
+
+        roslaunch can restart crashed nodes and can start nodes over a
+        network. Using crtl-C on the roslaunch terminal will close everything
+    """
+
+
+
 
 #### General Notes ####
 
+
 ROS master
-    - roscore is what tell the nodes where to get their data
-    - roslaunch will also start the roscore
-    - Note that the master is run on a network of some kind. This allows
+    # roscore is what tell the nodes where to get their data
+    # roslaunch will also start the roscore
+    # Note that the master is run on a network of some kind. This allows
       the program to work across a network if needed
 
 
 nodes are litte programs
-    - each node 'subscribes' or 'publishes' data
-    - roscore keeps track of who wants what
+    # each node 'subscribes' or 'publishes' data
+    # roscore keeps track of who wants what
 
 
 
