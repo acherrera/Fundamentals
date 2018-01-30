@@ -2,6 +2,9 @@ I will attempt to follow along with the ROS programming book to create
 something useful. Notes are taken in a psuedo-python code
 
 
+### NOTE: IF NOT SOURCED CORRECTLY, COMMANDS WON'T WORK
+
+
 # Making a work space
     mkdir -p ~/catkin_ws/src
     cd ~/catkin_ws/src
@@ -78,6 +81,7 @@ ROS master
 nodes are litte programs
     # each node 'subscribes' or 'publishes' data
     # roscore keeps track of who wants what
+
 
 
 
