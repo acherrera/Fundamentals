@@ -110,3 +110,13 @@ rostopic - contains commands for examine topics within nodes. Use the
         - will put in data into a topic. 
 
                    
+
+### Working with bag files ###
+    # Note: must have roscore running #
+rosbag
+    - record
+        - records information
+    - info
+        - show sumary of bag file
+    - play
+        - plays back the bag file
