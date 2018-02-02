@@ -1,7 +1,11 @@
 This is a basic overview of how to use git
 
+git init                # Start git repo
+
 git remote add origin http://IP/path/to/repository #will add the directory as 'origin' for later
 
+# Will store credentials for 15 minutes
+git config --global credential.helper cache
 
 #### Repo Info ####
 git status              # get the status of the repo
