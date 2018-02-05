@@ -12,15 +12,16 @@ something useful. Notes are taken in a psuedo-python code
     cd ~/catkin_ws/src          # Go to source
     catkin_init_workspace       # Initiatie
 
+
+    # Do this each time you make a new package to source package
     cd ~/catkin_ws              # go up one level
     catkin_make                 # This iniates it
-     
+    source devel/setup.bash     # soures the setup file
     """
     Make created build and devel. /build is for c++ which we
     mainly don't need anyways
     """
 
-    source devel/setup.bash     # soures the setup file
 
 
 # Making a package
@@ -31,7 +32,7 @@ something useful. Notes are taken in a psuedo-python code
     """
     here rospy is a dependancy and must be listed as such
     this is where you should list all dependencies
-    Also, should edit the 'package.xml' file
+    Also, should edit the 'package.xml' file. 
     """
 
 
