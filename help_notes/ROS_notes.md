@@ -6,22 +6,25 @@ something useful. Notes are taken in a psuedo-python code
 
 
 # Making a work space
-    mkdir -p ~/catkin_ws/src
-    cd ~/catkin_ws/src
-    catkin_init_workspace
+    Obviously switch 'catkin_ws' to workspace name
 
-    cd ~/catkin_ws          # go up one level
-    catkin_make             # make stuff! See below 
+    mkdir -p ~/catkin_ws/src    # Make directory
+    cd ~/catkin_ws/src          # Go to source
+    catkin_init_workspace       # Initiatie
+
+    cd ~/catkin_ws              # go up one level
+    catkin_make                 # This iniates it
      
     """
-    Make stuff created build and devel. /build is for c++ which we
+    Make created build and devel. /build is for c++ which we
     mainly don't need anyways
     """
 
-    source devel/setup.bash # soures the setup file
+    source devel/setup.bash     # soures the setup file
 
 
 # Making a package
+
     cd ~/catkin_ws/src                          # to source
     catkin_create_pkg my_awesome_code rospy     # see below
 
