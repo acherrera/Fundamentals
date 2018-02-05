@@ -4,6 +4,8 @@ something useful. Notes are taken in a psuedo-python code
 
 # Following along with the ROS online tutorial
 
+## Understanding ROS nodes
+
 Run roscore first thing when starting ROS
 
     roscore
@@ -31,6 +33,48 @@ If you run 'rosnode list' here, you will see
     /rosout
     /turtlesim
 
+ROS can assign names from the command line, which is very good. Notation is a
+little strange though:
+
+    rosrun turtlesime turtlesime_node __name:=my_turtle
+
+If running rosnode list now:
+
+    /rosout
+    /my_turtle
+
+Anthony note: this is useful with you want to run multiple nodes of the name
+type - maybe you want 100 turtles, or you have two motors on a robot - you can
+name each one individually without confusion
+
+You can use *rosnode ping* to see that a rosnode is running
+
+    rosnode ping my_turtle
+
+
+** End of *Understanding Nodes* **
+
+
+
+
+## Understanding Topics
+Be sure that roscore is running
+
+    roscore
+
+Start turtlesim - see above for details
+
+    rosrun turtlesim turtlesim_node
+
+Start the input node so that we can drive the little guy around
+
+    rosrun turtlesim turtle_teleop_key
+
+
+
+
+
+
 
 
 
@@ -38,6 +82,9 @@ If you run 'rosnode list' here, you will see
 
 
 # From here down is "legacy code". I.e. not organized well
+
+This is notes from before 20180205 in which I became confused part way through
+
 ### NOTE: IF NOT SOURCED CORRECTLY, COMMANDS WON'T WORK
 
 
