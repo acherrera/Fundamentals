@@ -3,18 +3,31 @@ something useful. Notes are taken in a psuedo-python code
 
 
 # Following along with the ROS online tutorial
+
 Run roscore first thing when starting ROS
+
     roscore
+    
 Show nodes currently running
+
     rosnode list
+    
 To get information about a node use
+
     rosnode info /rosout
+    
 Can use rosrun to run without knowing the package path
+
 Generally:
+
     rosrun [package_name] [node_name]
+    
 This will run turtlesim_node in turtilesim package
+
     rosrun turtlesim turtlesim_node
+    
 If you run 'rosnode list' here, you will see
+
     /rosout
     /turtlesim
 
