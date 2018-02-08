@@ -56,8 +56,8 @@ You can use *rosnode ping* to see that a rosnode is running
 
 
 
-
 ## Understanding Topics
+
 Be sure that roscore is running
 
     roscore
@@ -70,8 +70,173 @@ Start the input node so that we can drive the little guy around
 
     rosrun turtlesim turtle_teleop_key
 
+### Rostopic intro. 
+
+Get help with *rostopic -h*. Can also press tab key to show the possible sub-comands
+
+Use 'echo' to show the data published on a topic. This will show the turtle
+sim data
+
+    rostopic echo /turtle1/cmd_vel 
+
+Use rostopic list to get all the topics being published
+
+    rostopic list -h        help
+    rostopic list -v        For verbose output
+
+### ROS messages
+
+Use *rostopic type* to get the type of data the is being output.
+    
+    rostopic type /turtle1/cmd_vel      Outputs geometry_msgs/Twist
+ 
+Use rosmsg to show details of messages. Must be a message
+    
+    rosmsg show geometry_msgs/Twist     Found using above command
 
 
+### ROStopic pub
+
+Use *rostopic pub [topic] [msg_type] [args]* to publish your down data to a stream of data
+
+    rostopic pub    rostopic pub -1 /turtle/cmd_vel geometery_msgs/Twist -- '[2.0,0.0,0.0]' '[0.0, 0.0, 1.8]'
+
+From the *rostopic type* and *rostopic show* commands we know what the topic is
+expecting. linear [float64, float64, float64] angular
+[float64,float64,float64]. Run *rosmsg show* command to see. *-1* means that it
+will only publish once. *--* tells it that none of the next input is an option.
+That is, it's an input
+
+Publish data once every second. The rate is in Hz: here is one hertz 
+
+    rostopic pub /turtle/cmd_vel geometery_msgs/Twist -r 1 -- '[2.0,0.0,0.0]' '[0.0, 0.0, 1.8]'
+
+Now would be a good time to check rqt-graph to see what's going on
+
+### Rostopic hz
+
+Use *rostopic hz* to show the rate at which data is being published. 
+
+    rostopic hz /turtle1/pose
+
+Can use *rostopic type* and *rosmsg show* together to quickly get in depth
+information about a topic
+
+    rostopic type /turtle1/cmd_vel | rosmsg show
+
+
+### Using rqt_plot
+
+Use *rosrun rqt_plot rqt_plot* to get graph a data coming in. After running
+this command, you can select which data to plot 
+
+    rosrun rqt_plot rqt_plot
+
+
+*end of understanding topics*
+
+
+## Service and Parameters
+
+Services are just another way that ros nodes talk to each other. Instead of
+publishing and subscribing, they canrequest and get a response.
+
+    rosservice - list   List services
+               - call   call service with args
+               - type   type of service
+               - find   find services by type
+               - uri    print ROSRPC uri
+
+Use *rosservice list* to show the services that are available.
+
+    rosservice list
+
+Use *rosservice type [service]* to show the type of service that is available. In the
+case below the service takes no arguments. That is, no data sent or received
+during request or response
+
+    rosservice type    rosservice type /clear      returns std_srvs/Empty
+
+Use *rosservice call [service] [args]* to call a service
+
+    rosservice call /clear  In turtle sim, this clears the screen.
+
+Use *rossrv show* the same way that you would use *rosmsg show*.
+
+    rosservice type /spawn | rossrv show    Shows inputs of /spawn
+
+    output:
+    float32 x
+    float32 y
+    float32 theta
+    string name
+    ---
+    string name     <== optional
+
+Calling the spawn service no name. Still need an empty string though. Returns
+*name: "turtle2"*. 
+
+    rosservice call /spawn 2 2 0.2 ""
+
+### Using rosparam
+Use *rosparam [args]* to store and manipulate data on the ROS parameter server.
+The parameter service can store data of typical types. An example would be the
+background color of the turtle sim. 
+    
+    rosparam set    set parameter
+    rosparam get    get parameter
+    rosparam load   load parameters from file 
+    rosparam dump   dump parameters to file
+    rosparam delete delete parameter
+    rosparam list   list parameter names
+
+#### rosparam list
+
+    rosparam list   show parameters
+
+#### rosparam set and get
+Set background color
+    
+    rosparam set /background_r 150  
+
+Need to update the simulator to see effects
+
+    rosservice call /clear
+
+Get background color
+    
+    rosservice get /background_g
+
+Get all contents of parameter server
+
+    rosservice get /
+
+#### rosparam dump and load
+Use *rosparam [dump/load] [file_name] [namespace]*. To dump the parameters to a
+file.
+
+    rosparam dump params.yaml   Will dump to 'params.yaml'
+
+Load these parameters into a new namespace - i.e. copy.
+    
+    rosparam load params.yaml copy
+    rosparam get /copy/background_b
+
+
+*end of service and params*
+
+
+#### Using rqt_console and roslaunch
+rqt_console and rqt_logger_level can be used to aid in debugging. Use roslaunch
+for starting many nodes at once
+
+rqt_console displays output from nodes while rqt_logger_level lets us decide
+what level of messages we want to see. DEBUG, WARN, INFO, ERROR. 
+
+Will start by looking at the turtlesim nodes. First, run console and logger
+    
+    rosrun rqt_console rqt_console
+    rosrun rqt_logger_level rqt_logger_level
 
 
 
