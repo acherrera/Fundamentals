@@ -2,7 +2,33 @@ I will attempt to follow along with the ROS programming book to create
 something useful. Notes are taken in a psuedo-python code
 
 
-# Following along with the ROS online tutorial
+
+# Going through the package and catkin process
+
+
+## Createing a workspace for catkin. 
+Note that you must add the source. I prefer to do this in the .bashrc by adding
+source /opt/ros/<version>/setup.bash. This means I don't have to source it
+manually every time.
+
+### how to make a workspace
+
+    mkdir -p ~/catkin_ws/src
+    cd ~/catkin_ws/
+    catkin_make
+
+The catkin_make command handles all the hard parts for you. Now you have to
+source the new setup file.
+
+    source devel/setup.bash
+
+
+
+
+
+
+
+# Here are the basic functions of ROS
 
 ## Understanding ROS nodes
 
@@ -238,6 +264,8 @@ Will start by looking at the turtlesim nodes. First, run console and logger
     rosrun rqt_console rqt_console
     rosrun rqt_logger_level rqt_logger_level
 
+From here can change many options. Can show the severity of the output messages
+and change which message you see.
 
 
 
@@ -246,6 +274,10 @@ Will start by looking at the turtlesim nodes. First, run console and logger
 
 
 
+
+
+
+=========================================================================
 # From here down is "legacy code". I.e. not organized well
 
 This is notes from before 20180205 in which I became confused part way through
