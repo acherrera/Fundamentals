@@ -6,7 +6,27 @@ something useful. Notes are taken in a psuedo-python code
 # Going through the package and catkin process
 
 
-## Createing a workspace for catkin. 
+## Navigating the ROS filesystem
+
+Use *rospack find [package_name]* to find a ros package
+
+    rospack find roscpp     Will show you where roscpp is located
+
+Use *roscd [locationname]* to change to the directory. Part of rosbash
+
+    roscd roscpp            Will take you wild places - pwd to see where
+    roscd roscpp/cmake      Subdirectory
+
+Use *roscd log* to go to the log files. Very useful. 
+
+Use *rosls [locationname]* to list folders/file in folder
+
+
+
+
+
+
+## Creating a workspace for catkin. 
 Note that you must add the source. I prefer to do this in the .bashrc by adding
 source /opt/ros/<version>/setup.bash. This means I don't have to source it
 manually every time.
@@ -21,6 +41,8 @@ The catkin_make command handles all the hard parts for you. Now you have to
 source the new setup file.
 
     source devel/setup.bash
+
+
 
 
 
