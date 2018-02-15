@@ -1,5 +1,11 @@
 # What is this
 Notes on how to use bash scripts
+this is mainly taken from
+
+    https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php
+
+However my version is shorter and includes some custom notes
+
 
 ## Beginner Notes
 In order to run the scripts that are created, will need to set permissions in
@@ -40,5 +46,66 @@ copty the original.
     fi
 
 
+### Variables
 
-            
+Variables are well.... we know what variables are. To take in variables as
+arguement we use $1 for arguement one, $2 for arguement two and so on. For
+example, to create an advanced copy script:
+
+    #!/bin/bash
+    #simple copy script
+    cp $1 $2
+    #show data
+    echo Detail for $2
+    ls -lh $2
+
+Special variable names
+
+    $0          - name of bash script
+    $1-$9       - First 9 arguments
+    $#          - Number of arguements passed
+    $@          - all arguemnts pass
+    $?          - exit status of most recent process
+    $$          - process ID of current script
+    $USER       - Username of user running script
+    $HOSTNAME   - Machine hostname
+    $SECONDS    - Number of seconds since script started
+    $RANDOM     - Returns a random number
+    $LINENO     - Returns current linenumber in bash script
+
+#### How to set variables
+Note that there are no spaces and to call the variable you have to use the *$*
+
+    variable=value
+
+To call the variable
+
+    $variable
+
+You can also assign a variable more than one word by using quotes. Single
+quotes are literal and double will be expanded if passing a variable.
+
+    myvar='Hello World'     - will be interpreted literally. No difference
+    newvar="More $myvar"    - will expand the $myvar
+    newvar='More $myvar'    - will interpret literally. No expansion
+
+#### Command Substitution
+You can call a command as the variable and take the output of the command as
+the value. This will assign the count of lines of the ls function to the value
+myvar. This allows you to see how many files are in the /etc folder
+
+    myvar=$(ls /etc | wc -l)
+    echo $myvar
+
+If the output of the command is more than one line, the newline characters will
+be stripped out and only a single line will be interpreted as a variable
+
+
+Because of the odd way that this can sometimes behave it's a good idea to test
+your commands before putthing them in a script. That is, assign the variable
+and echo the variable as we did above
+
+#### Exporting Variables
+
+You can export variable by calling new instances of a scipt and passing the
+variables to them. 

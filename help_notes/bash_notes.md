@@ -1,21 +1,24 @@
-# This file contains interesting commands and their usage for the Linux command
-line.
+# Linux Command info
+
 
 NOTE: use the 'man' command to see the manual page for a given command. for
 example: 'man ls' will show the manual page for ls
 
-3 - MOVING THROUGH DIRECTORIES
+## 3 - MOVING THROUGH DIRECTORIES
 
 cd      Change the current directory
+
         ..  Go up one directory
         ~   Return to home directory  
         -   (Minus Sign) go to last directory. 
 
 ls      list contents of given direcotry.
+
         -l  Long format of file for extra details
         -a  Shows all, inlcuding hidden files
 
 less    shows the contents of a file
+
         Note: use in piplines to keep output from filling up screen. 
         Example: printenv | less
         This will 'open' new screen to view output
@@ -23,9 +26,10 @@ less    shows the contents of a file
 vim     editor for files
         Spend years learning this stupid thing
 
-4 - MOVING AND EDITING - work with files
+## 4 - MOVING AND EDITING - work with files
 
 cp      copy files and directories
+
         -a      archive mode: copy along with attributes
         -i      interactive: prompt for overwrite permission 
         -r      recursive: copy backwards - required for directories
@@ -37,12 +41,14 @@ mv      Move/rename files and directories
 mkdir   Create directories
 
 rm      Remove files and directories by defailt no warning
+
         -i      interactive: prompt for comfirmation
         -r      recursive:  delete backwards - for directories
         -f      force: ignores files that don't exist
         -v      verbose: shows output messages
 
 Wildcards   Allows better matching of characters.
+
             *   Match any characters
             ?   Match any single character
             [characters]    Match character in []
@@ -66,10 +72,11 @@ Wildcards   Allows better matching of characters.
 
 ln      Create hard and symbolic links must specific the locations for the link
 to point to. Example: ln -s /home/Documents/file.txt
+
         -s      symbolic: creates a soft link (good)
 
 
-5 - COMMAND OPTIONS - MORE WITH COMMANDS
+## 5 - COMMAND OPTIONS - MORE WITH COMMANDS
 
 type    How a command is interpreted
 
@@ -93,7 +100,7 @@ unalias Used to remove a previously created alias
 
 
 
-6 - I/O REDIRECTION
+## 6 - I/O REDIRECTION
 
 cat     Concatenate files
 
@@ -147,9 +154,10 @@ specified file: but will overwrite
         ls /usr/bin | tail -n 5
 
 
-7 - Seeing the World as the Shell Sees it
+## 7 - Seeing the World as the Shell Sees it
 
 echo    - Display a line of text
+
         This can be used to see how the shell will interpret a command
         Example:
         echo *      Will print out in the interpretation
@@ -159,10 +167,12 @@ echo    - Display a line of text
         echo .[!.]* Will show hidden files without the ".." file
 
 Using math  
+
         $((2+2))            Will output 4
         $(($((5**2))*3))    Will output (5^2)*3
 
 Brace Expansion - SUPER useful for file/directory creationg
+
         echo Front-{A,B,C}-Back  
         echo Number{1..5}
         echo {01..15}
@@ -173,10 +183,12 @@ Brace Expansion - SUPER useful for file/directory creationg
             mkdir {2007..2009}-{01..12} 
 
 Parameter Expansion - some words are variables more later
+
         echo $USER
         printenv | less     - use less to keep bash from filling up
 
 Command Substitution- use output of command as input
+
         Example:
             ls -l $(which cp)   - list cp location details
             file $(ls -d /usr/bin/* | grep zip) show file details for all files
@@ -184,14 +196,15 @@ Command Substitution- use output of command as input
             $() will treat the stuff inside as an input for command
 
 Quoting: Lots of stuff here. Just kind of skipping it
+
         Use quoting to keep format
         echo $(cal)     No formatting
         echo "$(cal)"   Includes formatting
 
 
 
-8 - Advanced Keyboard Tricks
-    Lots of information on moving around - using Vi so whatever
+### 8 - Advanced Keyboard Tricks
+Lots of information on moving around - using Vi so whatever
 
 clear - Clears the screen
 
