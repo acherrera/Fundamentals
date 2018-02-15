@@ -2,6 +2,11 @@
 Notes on how to use bash scripts
 
 ## Beginner Notes
+In order to run the scripts that are created, will need to set permissions in
+order to execute the script
+
+    chmod 755 myscript.sh
+
 Use *echo* to print to the screen
 
     echo 'Hello, world!'
