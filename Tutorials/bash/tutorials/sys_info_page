@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Program to output a system information page
+# Put this in ~/bin when finished
+
+CURRENT_TIME=$(date + %x %r %Z)
+TIME_STAMP="Generate $CURRENT_TIME, by $USER"
+TITLE="System Information Report"
+
+# This is fairly common convention for 'here' document
+cat<< _EOF_
+<HTML>
+    <HEAD>
+        <TITLE>$TITLE</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>$TITLE</H1>
+        <P>$TIME_STAMP</P>
+    </BODY>
+</HTML>"
+_EOF_

@@ -1,5 +1,12 @@
 
-Vim notes
+# Vim notes
+
+## File management
+To open the previously opened file
+
+    :e#
+
+
 
     Open and closing indents
         ** Note, you must have folding turned on in .vimrc

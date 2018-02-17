@@ -1,4 +1,4 @@
-# For setup... I think
+# For setup... I think. Never really flushed this out
 
 try:
     from setuptools import setup
