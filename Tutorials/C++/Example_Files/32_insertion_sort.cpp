@@ -16,17 +16,19 @@ using namespace std;
 int findSmallestRemainingElement(int array[], int size, int index);
 void swap (int array[], int first_index, int second_index);
 
+// Defining Functions - may want to put this under main 
 
 void sort (int array[], int size)
 {
-    // function is supposed to find the smallest Element and swap
-    // the element
+    // function just implements 'findSmallest...' and 'swap'
     for ( int i = 0; i < 100; i++ )
     {
         int index = findSmallestRemainingElement ( array , size, i);
         swap (array, i, index);
     }
 }
+
+
 
 int findSmallestRemainingElement (int array[], int size, int index)
 {
