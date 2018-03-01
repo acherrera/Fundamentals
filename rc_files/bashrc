@@ -6,15 +6,12 @@
 set -o vi
 bind  '"jk":vi-movement-mode'
 
-
-# Aliases
-alias cl='clear && ls'
-
-
 # Set vim sa defualt text editor
 export EDITOR='vim'
 export VISUAL='vim'
 
+# Add personal scripts
+export PATH=$PATH:~/personal_scripts/
 
 # If not running interactively, don't do anything
 case $- in
@@ -133,8 +130,8 @@ fi
 # Powerline shell changes
 if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh; fi
 
-#export ROS_HOSTNAME=192.168.220.162
-#export ROS_MASTER_URI=http://192.168.220.86:11311
+# export ROS_HOSTNAME=192.168.220.162
+# export ROS_MASTER_URI=http://192.168.220.86:11311
 
 # Sourcing for ROS
 # If this isn't at end of file, it messes stuff up. No idea why
