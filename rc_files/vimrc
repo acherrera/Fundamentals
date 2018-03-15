@@ -2,6 +2,15 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
+" Needed for pathogen plugin manager
+execute pathogen#infect()
+
+
+" Colors!
+set t_Co=256
+syntax enable
+set background=dark
+Colorscheme=molokai
 
 " Open NERDtree if no file specified
 autocmd StdinReadPre * let s:std_in=1
@@ -28,8 +37,13 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'https://github.com/itchyny/lightline.vim'
 Plugin 'https://github.com/jiangmiao/auto-pairs'
+Plugin 'https://github.com/vim-scripts/twilight256.vim'
+Plugin 'jacoborus/tender.vim'
+Plugin 'https://github.com/tomasr/molokai'
+Plugin 'fcpg/vim-orbital'
+
 
 
 " Plugin 'tmhedberg/SimpylFold'
@@ -63,7 +77,6 @@ filetype plugin indent on
 set number
 let python_highlight_all=1
 syntax on
-set background=dark
 set incsearch
 set hlsearch
 
@@ -90,7 +103,6 @@ set rtp+=/usr/share/powerline/bindings/vim/
 " Always show statuslie =========================================
 set laststatus=2
  " Use 256 colours (Use this setting only if your terminal supports 256  colours)
- set t_Co=256
 
 " Code folding
 set foldmethod=indent 
