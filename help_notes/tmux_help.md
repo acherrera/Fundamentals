@@ -10,10 +10,12 @@ tmux kill-session -t foo    # kills foo session
 
 
 ### Ctrl + b window commands ###
+
+c                           # new window
 s                           # Switch session
 n                           # next window
 p                           # previous window
-c                           # new window
+w                           # show windows
 
 
 ### ctrl + b pane commands ###

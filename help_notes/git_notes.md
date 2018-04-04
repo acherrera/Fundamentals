@@ -1,12 +1,42 @@
-# Git commands used often
 
 
-## Initializing a repo on local machine
+## Common Commands
 
-    git init                # Start git repo
 
-    git remote add origin http://IP/path/to/repository #will add the directory as 'origin' for later
+    git clone https:/blah   # Used to download a repository. Need to get the
+                            # webside address somehow. Github is very easy
+    git pull                # Good enough for most pulls
+    git pull origin master  # get all changes in master branch. Useful if
+                            # working with branches
+    git add -A              # add all files to the waiting list
+                            # Can also specify which files to add
+    git commit -m 'comment' # add the files to the repository, make 
+                            # comment about the commit
+    git push                # Good enough for most pushes. 
+    git push -u origin xx   # push xx to the remote repository branch.
+                            # Used for branching
 
+
+
+
+## Typical Working flow - updating repo
+
+    git status              # Check for changes
+    git add -A              # Add all files to repo
+    git commit -m 'comment' # Commit with comment
+    git push                # push to current branch. 
+
+
+## .gitignore file
+.gitignore is a file that tells git what is should avoid adding. For example,
+to avoid adding image files to the repos and a folder called "examples" add
+this to the .gitignore. 
+
+    *.jpg
+    examples/
+
+
+## Credential helper - not needed for AWS
 Will store credentials for 15 minutes
 
     git config --global credential.helper cache
@@ -19,17 +49,8 @@ Will store credentials for 15 minutes
     git diff --staged       # changes staged but not commited
 
 
-## Common Commands
-
-    git pull origin master  # get all changes in master
-    git add -A              # add all files to the waiting list
-                            # Can also specify which files to add
-    git commit -m 'comment' # add the files to the repository, make 
-                            # comment about the commit
-    git push -u origin xx   # push xx to the remote repository branch
-
-
 ## Branching
+Be careful with branching. Very useful, but messes things up in a hurry
 
     git branch              # shows branches and current
     git branch xx           # add branch

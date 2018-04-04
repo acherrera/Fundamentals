@@ -1,11 +1,31 @@
 
 # Vim notes
 
+Right now these are just personal notes for vim. Starting to add more basic
+commands
+
+
+## Movement
+
+### Simple movment
+Moving to the top and bottom of file
+
+    G       # Move to bottom of file
+    gg      # Move to top of file
+    xx gg   # Move 'xx' down. Ex: 'xx' = 12
+
+
+### Marking Position
+Can mark position and jump back and forth
+    m+a     # mark position as 'a'. Can be an lowercase letter
+    '+a     # Jump to beginning of marked position 'a'
+    `+a     # move to position 'a'
+
 ## File management
 
 To open the previously opened file
 
-    :e#
+    ctrl+6
 
 ## Open and closing indents
 
@@ -19,7 +39,9 @@ Note, you must have folding turned on in .vimrc
    zO                       - Opens all folds
 
 
-# Running Python
+# Running programs without closeing vim
+Neat trick used to run programs in the same window while keeping change
+history. Useful for testing out quick changes and then undoing them if needed 
 
     ctrl-z                  - will pause currenty session
     $python3 whatever.py    - runs program whatever.py
