@@ -5,6 +5,11 @@
 
     git clone https:/blah   # Used to download a repository. Need to get the
                             # webside address somehow. Github is very easy
+
+
+    git status              # **VERY** useful. Good way to see what is going on
+                            # without having to go to website all the time
+                            # Use often, doesn't mess with anything 
     git pull                # Good enough for most pulls
     git pull origin master  # get all changes in master branch. Useful if
                             # working with branches
