@@ -6,9 +6,6 @@ This file contains the most recent work on the tutorial. Each file is a
 little different.
 
 Tutorial 4 - getting and graphing data
-Tutorial 5 - Updating databases. Note that changes are permanent. Make sure
-             you have backups
-
 """
 
 import sqlite3
@@ -82,37 +79,6 @@ def graph_data():
     plt.plot_date(dates, values, '-')
     plt.show()
 
-def del_and_update():
-    """
-    Note that all these changes are permanent
-    LIMIT will stop the delete at the number of values. This will give an
-    idea of how many idea have been removed
-    DELETE FROM stuffToPlot WHERE value = 99 LIMIT 1000
-
-
-    SELECT FROM stuffToPlot WHERE value = 99 LIMIT 1000
-    """
-    c.execute('SELECT * FROM stuffToPlot')
-    [print(row) for row in c.fetchall()]
-
-    # c.execute('UPDATE stuffToPlot SET value = 99 WHERE value = 8')
-    # conn.commit()
-    #
-    # c.execute('SELECT * FROM stuffToPlot')
-    # [print(row) for row in c.fetchall()]
-
-    # c.execute('SELECT FROM stuffToPlot WHERE value = 5')
-    # conn.commit()
-
-    print('#'*50)
-    c.execute('SELECT * FROM stuffToPlot WHERE value = 5')
-    data = c.fetchall()
-    [print(row) for row in data]
-    print(len(data))
-    
-
-
-
 
 # create_table()
 # data_entry()
@@ -121,7 +87,7 @@ def del_and_update():
 #     time.sleep(1)
 # read_from_db()
 
-del_and_update()
+graph_data()
 
 # Only need to close this at the very end
 c.close()
