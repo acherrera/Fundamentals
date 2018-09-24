@@ -1,0 +1,12 @@
+[
+    {
+        "__complex__": true,
+        "real": 9.0,
+        "imag": 5.0
+    },
+    {
+        "__complex__": true,
+        "real": 4.0,
+        "imag": 2.0
+    }
+]
