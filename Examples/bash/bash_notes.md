@@ -200,12 +200,3 @@ Quoting: Lots of stuff here. Just kind of skipping it
         Use quoting to keep format
         echo $(cal)     No formatting
         echo "$(cal)"   Includes formatting
-
-
-
-### 8 - Advanced Keyboard Tricks
-Lots of information on moving around - using Vi so whatever
-
-clear - Clears the screen
-
-history - Display history list
